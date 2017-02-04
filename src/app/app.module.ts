@@ -14,6 +14,9 @@ import { RoyaleService } from './services/royale.service';
 
 import CONFIG from './config';
 import { HomeComponent } from './home/home.component';
+import { ArenaAction } from './actions/arena.action';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './reducers/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -36,9 +39,11 @@ const appRoutes: Routes = [
         FormsModule,
         HttpModule,
         RouterModule.forRoot(appRoutes),
-        NgbModule.forRoot()
+        NgbModule.forRoot(),
+        StoreModule.provideStore(reducer),
     ],
     providers: [
+        ArenaAction,
         RoyaleService,
         //{ provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://localhost:8085/api' },
         { provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://www.clashapi.xyz/api' },
