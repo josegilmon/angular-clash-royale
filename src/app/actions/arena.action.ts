@@ -20,7 +20,7 @@ export class ArenaAction {
                     type: 'SEARCH_ARENAS',
                     payload: arenas
                 });
-            }, this.actionError );
+            }, ArenaAction.actionError );
     }
 
     static actionError(error) {
