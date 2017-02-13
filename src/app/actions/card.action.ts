@@ -8,16 +8,16 @@ import { State } from '../reducers/index';
 import { RoyaleService } from '../services/royale.service';
 
 @Injectable()
-export class ArenaAction {
+export class CardAction {
 
     constructor(private service: RoyaleService, private store: Store<State>) {}
 
-    getArenas() {
+    getCards() {
         this.service
-            .getArenas()
+            .getCards()
             .subscribe( data => {
                 return this.store.dispatch({
-                    type: 'SEARCH_ARENAS',
+                    type: 'SEARCH_CARDS',
                     payload: data
                 });
             }, this.actionError );

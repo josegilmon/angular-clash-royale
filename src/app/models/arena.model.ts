@@ -4,4 +4,13 @@
 
 export class Arena {
 
+    cardUnlocks: string[];
+    chests: string[];
+    clan: Object;
+    idName: string;
+    minTrophies: number;
+    name: string;
+    number: number;
+    order: number;
+    victoryGold: number;
 }

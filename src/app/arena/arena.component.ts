@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ArenaAction } from '../actions/arena.action';
 import { Store } from '@ngrx/store';
 import { State } from '../reducers/index';
+import { ArenaAction } from '../actions/arena.action';
+import { Arena } from '../models/arena.model';
 
 @Component({
     selector: 'clash-royale-arena',
@@ -11,7 +12,7 @@ import { State } from '../reducers/index';
 })
 export class ArenaComponent implements OnInit {
 
-    arenas: any[];
+    arenas: Arena[];
     arena$: Observable<any>;
 
     constructor(private store: Store<State>, private arenaAction: ArenaAction) {
@@ -21,5 +22,9 @@ export class ArenaComponent implements OnInit {
     ngOnInit() {
         this.arenaAction.getArenas();
         this.arena$ = this.store.select( (state: State) => state.arenas.entities );
+    }
+
+    arenaClick(idArena: string) {
+        debugger;
     }
 }

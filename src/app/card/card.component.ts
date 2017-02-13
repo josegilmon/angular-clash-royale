@@ -1,19 +1,31 @@
-import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { RoyaleService } from '../services/royale.service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { State } from '../reducers/index';
+import { CardAction } from '../actions/card.action';
+import { Card } from '../models/card.model';
 
 @Component({
     selector: 'clash-royale-card',
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.css']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
 
-    cards: any[];
-    cardSubscription: Subscription;
+    cards: Card[];
+    card$: Observable<any>;
 
-    constructor(private royaleService: RoyaleService) {
-        this.cardSubscription = this.royaleService.getCards().subscribe(data => this.cards = data );
+    constructor(private store: Store<State>, private cardAction: CardAction) {
+        //this.cardSubscription = this.royaleService.getCards().subscribe(data => this.cards = data );
+    }
+
+    ngOnInit() {
+        this.cardAction.getCards();
+        this.card$ = this.store.select( (state: State) => state.cards.entities );
+    }
+
+    cardClick(ev: Event) {
+        debugger;
     }
 
 }

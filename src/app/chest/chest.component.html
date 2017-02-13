@@ -4,7 +4,7 @@ Chests
 <div class="container">
     <!-- Content here -->
     <div class="row justify-content-center">
-        <div class="card text-center" *ngFor="let chest of chests;">
+        <div class="card text-center" *ngFor="let chest of chest$ | async;">
             <img class="card-img-top" src="http://www.clashapi.xyz/images/chests/{{chest.idName}}.png" alt="Card image cap">
             <div class="card-block">
                 <h4 class="card-title">{{chest.name}}</h4>
