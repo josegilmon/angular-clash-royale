@@ -1,3 +1,4 @@
+///<reference path="pages/arena/detail/arena-detail.component.ts"/>
 /**
  * Created by jagil on 26/01/2017.
  */
@@ -6,7 +7,7 @@ import { OpaqueToken } from '@angular/core';
 
 const CLASH_ROYALE_API_URL = new OpaqueToken('CLASH_ROYALE_API_URL');
 
-const ROUTES = {
+const API_PATHS = {
     ARENAS: '/arenas',
     CARDS: '/cards',
     CHESTS: '/chests',
@@ -15,5 +16,5 @@ const ROUTES = {
 
 export default {
     CLASH_ROYALE_API_URL,
-    ROUTES
+    API_PATHS
 };

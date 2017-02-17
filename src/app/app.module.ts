@@ -2,30 +2,39 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { ArenaComponent } from './arena/arena.component';
-import { CardComponent } from './card/card.component';
-import { ChestComponent } from './chest/chest.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ArenaComponent } from './shared/arena/arena.component';
+import { ArenaListComponent } from './pages/arena/list/arena-list.component';
+import { ArenaDetailComponent } from './pages/arena/detail/arena-detail.component';
+import { CardListComponent } from './pages/card/list/card-list.component';
+import { ChestListComponent } from './pages/chest/list/chest-list.component';
 
-import { RoyaleService } from './services/royale.service';
-
-import CONFIG from './config';
-import { HomeComponent } from './home/home.component';
-import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/index';
 
 import { ArenaAction } from './actions/arena.action';
 import { CardAction } from './actions/card.action';
 import { ChestAction } from './actions/chest.action';
 
+import { RoyaleService } from './services/royale.service';
+
+import CONFIG from './config';
+
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'arenas', component: ArenaComponent },
-    { path: 'cards', component: CardComponent },
-    { path: 'chests', component: ChestComponent },
+    {
+        path: 'arenas',
+        children: [
+            {path: '', component: ArenaListComponent},
+            {path: ':idName', component: ArenaDetailComponent}
+        ]
+    },
+    { path: 'cards', component: CardListComponent },
+    { path: 'chests', component: ChestListComponent },
     { path: '**', redirectTo: '' }
 ];
 
@@ -34,8 +43,10 @@ const appRoutes: Routes = [
         AppComponent,
         HomeComponent,
         ArenaComponent,
-        CardComponent,
-        ChestComponent
+        ArenaListComponent,
+        ArenaDetailComponent,
+        CardListComponent,
+        ChestListComponent
     ],
     imports: [
         BrowserModule,

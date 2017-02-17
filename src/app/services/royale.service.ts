@@ -14,18 +14,18 @@ export class RoyaleService {
     }
 
     getArenas(): Observable<any[]> {
-        return this.http.get(`${this.apiUrl}${CONFIG.ROUTES.ARENAS}`).map( (data: Response) => data.json() );
+        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.ARENAS}`).map( (data: Response) => data.json() );
     }
 
     getCards(): Observable<any[]> {
-        return this.http.get(`${this.apiUrl}${CONFIG.ROUTES.CARDS}`).map( (data: Response) => data.json() );
+        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.CARDS}`).map( (data: Response) => data.json() );
     }
 
     getChests(): Observable<any[]> {
-        return this.http.get(`${this.apiUrl}${CONFIG.ROUTES.CHESTS}`).map( (data: Response) => data.json() );
+        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.CHESTS}`).map( (data: Response) => data.json() );
     }
 
     getPlayers(): Observable<any[]> {
-        return this.http.get(`${this.apiUrl}${CONFIG.ROUTES.PLAYERS}`).map( (data: Response) => data.json() );
+        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.PLAYERS}`).map( (data: Response) => data.json() );
     }
 }
