@@ -6,17 +6,23 @@ import { Arena } from '../models/arena.model';
 
 export interface IArenaState {
     entities: Arena[];
+    arena: Arena;
 }
 
 const initialState: IArenaState = {
-    entities: null
+    entities: null,
+    arena: null
 };
 
 export function reducer(state = initialState, action): IArenaState {
     switch (action.type) {
-        case 'SEARCH_ARENAS':
+        case 'GET_ARENAS':
             return Object.assign({}, state, {
                 entities: action.payload
+            });
+        case 'GET_ARENA':
+            return Object.assign({}, state, {
+                arena: action.payload
             });
         default:
             return state;

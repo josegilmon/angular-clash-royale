@@ -13,6 +13,10 @@ export class RoyaleService {
 
     }
 
+    getArena(idName: string): Observable<any[]> {
+        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.ARENAS}/${idName}`).map( (data: Response) => data.json() );
+    }
+
     getArenas(): Observable<any[]> {
         return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.ARENAS}`).map( (data: Response) => data.json() );
     }

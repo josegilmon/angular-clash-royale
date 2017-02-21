@@ -26,13 +26,8 @@ import CONFIG from './config';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
-    {
-        path: 'arenas',
-        children: [
-            {path: '', component: ArenaListComponent},
-            {path: ':idName', component: ArenaDetailComponent}
-        ]
-    },
+    { path: 'arenas', component: ArenaListComponent },
+    { path: 'arenas/:idName', component: ArenaDetailComponent },
     { path: 'cards', component: CardListComponent },
     { path: 'chests', component: ChestListComponent },
     { path: '**', redirectTo: '' }

@@ -13,8 +13,9 @@ export class ArenaComponent {
 
     constructor() { }
 
-    openArena(idName) {
-        this.onClick.emit(idName);
+    openArena(ev: Event) {
+        ev.preventDefault();
+        this.onClick.emit(this.arena.idName);
     }
 
 }

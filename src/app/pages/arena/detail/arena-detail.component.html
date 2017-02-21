@@ -1,4 +1,22 @@
 Arena detail
 
 <!--component html goes here -->
-<div class="container"></div>
+<div class="container">
+    <ul>
+        <li>{{arena?.name}}</li>
+        <li>{{arena?.minTrophies}}</li>
+
+        <ngb-tabset>
+            <ngb-tab title="Cards">
+                <template ngbTabContent>
+                    <p>Cards</p>
+                </template>
+            </ngb-tab>
+            <ngb-tab title="Chests">
+                <template ngbTabContent>
+                    <p>Chests</p>
+                </template>
+            </ngb-tab>
+        </ngb-tabset>
+    </ul>
+</div>

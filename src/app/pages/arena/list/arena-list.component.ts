@@ -13,19 +13,19 @@ import { Router } from '@angular/router';
 })
 export class ArenaListComponent implements OnInit {
 
-    arenas: Arena[];
+    //arenas: Arena[];
     arena$: Observable<any>;
 
     constructor(private store: Store<State>, private arenaAction: ArenaAction, private router: Router) {
-        //this.arenaSubscription = this.royaleService.getArenas().subscribe( data => this.arenas = data );
+        //this.arenaSubscription = this.royaleService.getAll().subscribe( data => this.arenas = data );
     }
 
     ngOnInit() {
-        this.arenaAction.getArenas();
+        this.arenaAction.getAll();
         this.arena$ = this.store.select( (state: State) => state.arenas.entities );
     }
 
     arenaClick(idArena: string) {
-        this.router.navigateByUrl(`./${idArena}`);
+        this.router.navigateByUrl(`arenas/${idArena}`);
     }
 }

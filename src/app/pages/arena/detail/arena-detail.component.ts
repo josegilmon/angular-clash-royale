@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { State } from '../../../reducers/index';
@@ -12,16 +13,17 @@ import { Arena } from '../../../models/arena.model';
 })
 export class ArenaDetailComponent implements OnInit {
 
-    arenas: Arena[];
+    arena: Arena;
     arena$: Observable<any>;
 
-    constructor(private store: Store<State>, private arenaAction: ArenaAction) {
-        //this.arenaSubscription = this.royaleService.getArenas().subscribe( data => this.arenas = data );
+    constructor(private store: Store<State>, private arenaAction: ArenaAction, private route: ActivatedRoute) {
+        //this.arenaSubscription = this.royaleService.getAll().subscribe( data => this.arenas = data );
     }
 
     ngOnInit() {
-        //this.arenaAction.getArenas();
-        //this.arena$ = this.store.select( (state: State) => state.arenas.entities );
+        this.route.params.subscribe( (params: any) => params.idName && this.arenaAction.get(params.idName) );
+        this.arena$ = this.store.select( (state: State) => state.arenas.arena );
+        this.arena$.subscribe( data => this.arena = data );
     }
 
     arenaClick(idArena: string) {
