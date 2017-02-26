@@ -1,7 +1,9 @@
 <!--h1>{{title}}</h1-->
 
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
-    <a class="navbar-brand" routerLink="/">Clash Royale</a>
+    <a class="navbar-brand" routerLink="/">
+        <img src="assets/cr_logo.png" />
+    </a>
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item" routerLinkActive="active">
@@ -17,4 +19,6 @@
     </div>
 </nav>
 
-<router-outlet></router-outlet>
+<div class="container col-md-8">
+    <router-outlet></router-outlet>
+</div>

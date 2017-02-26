@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+	background: url(assets/Clash_Royale_Forum_Background.png) fixed no-repeat;
+	background-size: cover;
+}
+
 img {
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
