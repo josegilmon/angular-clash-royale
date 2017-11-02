@@ -8,14 +8,14 @@ Arena detail
 
         <ngb-tabset>
             <ngb-tab title="Cards">
-                <template ngbTabContent>
-                    <p>Cards</p>
-                </template>
+                <ng-template ngbTabContent>
+                    <clash-royale-card-list [idArena]="arena?.number"></clash-royale-card-list>
+                </ng-template>
             </ngb-tab>
             <ngb-tab title="Chests">
-                <template ngbTabContent>
-                    <p>Chests</p>
-                </template>
+                <ng-template ngbTabContent>
+                    <clash-royale-chest-list [idArena]="arena?.number"></clash-royale-chest-list>
+                </ng-template>
             </ngb-tab>
         </ngb-tabset>
     </ul>

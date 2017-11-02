@@ -4,4 +4,12 @@
 
 export class Chest {
 
+    idName: string;
+    name: string;
+    order: number;
+    unlock: Object;
+    gemCost: number;
+    gold: Object;
+    cards: Object;
+    arena: number;
 }

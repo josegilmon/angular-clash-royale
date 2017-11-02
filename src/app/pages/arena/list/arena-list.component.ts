@@ -22,7 +22,9 @@ export class ArenaListComponent implements OnInit {
 
     ngOnInit() {
         this.arenaAction.getAll();
-        this.arena$ = this.store.select( (state: State) => state.arenas.entities );
+        this.arena$ = this.store.select( (state: State) => {
+            return state.arenas.entities;
+        });
     }
 
     arenaClick(idArena: string) {

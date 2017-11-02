@@ -3,7 +3,7 @@
  */
 
 export class Card {
-/*
+
     idName: string;
     rarity: string;
     type: string;
@@ -12,5 +12,4 @@ export class Card {
     arena: number;
     elixirCost: number;
     order: number;
-*/
 }

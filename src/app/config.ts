@@ -3,9 +3,9 @@
  * Created by jagil on 26/01/2017.
  */
 
-import { OpaqueToken } from '@angular/core';
+ import { InjectionToken } from "@angular/core";
 
-const CLASH_ROYALE_API_URL = new OpaqueToken('CLASH_ROYALE_API_URL');
+const CLASH_ROYALE_API_URL = new InjectionToken('CLASH_ROYALE_API_URL');
 
 const API_PATHS = {
     ARENAS: '/arenas',
