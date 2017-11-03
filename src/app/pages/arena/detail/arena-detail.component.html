@@ -6,7 +6,16 @@ Arena detail
         <li>{{arena?.name}}</li>
         <li>{{arena?.minTrophies}}</li>
 
-        <ngb-tabset>
+        <mat-tab-group class="arena-tab-group">
+            <mat-tab label="Cards">
+                <clash-royale-card-list [idArena]="arena?.number"></clash-royale-card-list>
+            </mat-tab>
+            <mat-tab label="Chests">
+                <clash-royale-chest-list [idArena]="arena?.number"></clash-royale-chest-list>
+            </mat-tab>                
+        </mat-tab-group>
+            
+        <!--ngb-tabset>
             <ngb-tab title="Cards">
                 <ng-template ngbTabContent>
                     <clash-royale-card-list [idArena]="arena?.number"></clash-royale-card-list>
@@ -17,6 +26,6 @@ Arena detail
                     <clash-royale-chest-list [idArena]="arena?.number"></clash-royale-chest-list>
                 </ng-template>
             </ngb-tab>
-        </ngb-tabset>
+        </ngb-tabset-->
     </ul>
 </div>

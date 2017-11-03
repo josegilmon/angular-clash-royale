@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule, MatCardModule, MatTabsModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -49,8 +50,11 @@ const appRoutes: Routes = [
         FormsModule,
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
-        NgbModule.forRoot(),
         StoreModule.forRoot(reducers),
+        BrowserAnimationsModule,
+        MatGridListModule,
+        MatCardModule,
+        MatTabsModule
     ],
     providers: [
         RoyaleService,
