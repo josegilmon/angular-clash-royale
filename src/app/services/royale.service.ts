@@ -10,11 +10,10 @@ import CONFIG from '../config';
 @Injectable()
 export class RoyaleService {
 
-    constructor(@Inject(CONFIG.CLASH_ROYALE_API_URL) private apiUrl: string, private http: HttpClient) {
-
+    constructor(@Inject(CONFIG.CLASH_ROYALE_API_URL) private apiUrl: String, private http: HttpClient) {
     }
 
-    getArena(idName: string): Observable<Object> {
+    getArena(idName: String): Observable<Object> {
         return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.ARENAS}/${idName}`);
     }
 
