@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "6"
+ 
+branches:
+  only:
+    - master
+ 
+cache:
+  directories:
+    - node_modules
+ 
+script:
+  - npm run build.prod
+ 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 5394887011a0c456f3a1cec3f99fad504605b7fa
+  local_dir: dist
+  on:
+    branch: master
