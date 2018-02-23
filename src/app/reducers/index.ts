@@ -8,7 +8,7 @@ import * as chest from './chest.reducer';
 
 import { storeFreeze } from 'ngrx-store-freeze';
 import * as fromRouter from '@ngrx/router-store';
-import { ActionReducerMap, combineReducers } from '@ngrx/store';
+import { ActionReducerMap } from '@ngrx/store';
 
 export interface State {
     arenas: arena.IArenaState,

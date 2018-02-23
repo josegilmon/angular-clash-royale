@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
 body {
-	/*background: url(assets/Clash_Royale_Forum_Background.png) fixed no-repeat;*/
+	background: url(assets/Clash_Royale_Forum_Background.png) fixed no-repeat;
 	background-size: cover;
 }
 

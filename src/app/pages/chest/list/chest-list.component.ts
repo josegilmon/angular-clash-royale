@@ -32,4 +32,8 @@ export class ChestListComponent implements OnInit {
         } );
     }
 
+    getImage(chestName) {
+        return chestName.replace(/-\d$/, '');
+    }
+
 }

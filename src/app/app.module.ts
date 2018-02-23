@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule, MatCardModule, MatTabsModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
         StoreModule.forRoot(reducers),
+        StoreDevtoolsModule.instrument({ maxAge: 25 }),
         BrowserAnimationsModule,
         MatGridListModule,
         MatCardModule,

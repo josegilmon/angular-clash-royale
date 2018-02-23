@@ -2,7 +2,7 @@
 <div class="container">
     <!-- Content here -->
 
-    <mat-grid-list cols="2">
+    <mat-grid-list cols="2" rowHeight="2:1">
         <mat-grid-tile *ngFor="let card of cards">
             <mat-card class="example-card" [routerLink]="card.route">
                 <!--img mat-card-image src="" alt="Photo of a Shiba Inu"-->
@@ -13,7 +13,7 @@
                 <mat-card-content>
                     <p>{{card.text}}</p>
                 </mat-card-content>
-            </mat-card>                
+            </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
     <!--div class="row justify-content-center">
