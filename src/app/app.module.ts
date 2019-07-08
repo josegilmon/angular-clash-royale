@@ -18,7 +18,7 @@ import { ArenaDetailComponent } from './pages/arena/detail/arena-detail.componen
 import { CardListComponent } from './pages/card/list/card-list.component';
 import { ChestListComponent } from './pages/chest/list/chest-list.component';
 
-import { reducers } from './reducers/index';
+import { reducers } from './reducers';
 
 import { ArenaAction } from './actions/arena.action';
 import { CardAction } from './actions/card.action';
@@ -62,7 +62,7 @@ const appRoutes: Routes = [
     ],
     providers: [
         RoyaleService,
-        //{ provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://localhost:8085/api' },
+        // { provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://localhost:8085/api' },
         { provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://www.clashapi.xyz/api' },
         ArenaAction,
         CardAction,

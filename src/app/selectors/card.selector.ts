@@ -4,7 +4,7 @@
 
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State } from '../reducers/index';
+import { State } from '../reducers';
 
 @Injectable()
 export class CardSelector {
@@ -12,6 +12,7 @@ export class CardSelector {
     constructor(private store: Store<State>) {}
 
     getArenaCards(idArena: number) {
-        return this.store.select( state => state.cards.entities ).filter( (entities: any) => entities.filter( (card: any) => card && card.arena === idArena ) );
+        // return this.store.select( state => state.cards.entities )
+        //    .filter( (entities: any) => entities.filter( (card: any) => card && card.arena === idArena ) );
     }
 }
