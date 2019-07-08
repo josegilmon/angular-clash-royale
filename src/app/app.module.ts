@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatCardModule, MatTabsModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -51,7 +53,7 @@ const appRoutes: Routes = [
         FormsModule,
         HttpClientModule,
         RouterModule.forRoot(appRoutes),
-        StoreModule.forRoot(reducers),
+        StoreModule.forRoot(reducers, { runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true }}),
         StoreDevtoolsModule.instrument({ maxAge: 25 }),
         BrowserAnimationsModule,
         MatGridListModule,
