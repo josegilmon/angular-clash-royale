@@ -4,10 +4,12 @@
 
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State } from '../reducers/index';
+import { State } from '../reducers';
 import { RoyaleService } from '../services/royale.service';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class CardAction {
 
     constructor(private service: RoyaleService, private store: Store<State>) {}

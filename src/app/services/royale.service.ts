@@ -6,30 +6,35 @@ import 'rxjs';
 import { Observable } from 'rxjs';
 
 import CONFIG from '../config';
+import {environment} from '../../environments/environment';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class RoyaleService {
 
-    constructor(@Inject(CONFIG.CLASH_ROYALE_API_URL) private apiUrl: String, private http: HttpClient) {
+    baseUrl: string = environment.baseUrl;
+
+    constructor(private http: HttpClient) {
     }
 
-    getArena(idName: String): Observable<Object> {
-        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.ARENAS}/${idName}`);
+    getArena(idName: string): Observable<object> {
+        return this.http.get(`${this.baseUrl}${CONFIG.API_PATHS.ARENAS}/${idName}`);
     }
 
-    getArenas(): Observable<Object> {
-        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.ARENAS}`);
+    getArenas(): Observable<object> {
+        return this.http.get(`${this.baseUrl}${CONFIG.API_PATHS.ARENAS}`);
     }
 
-    getCards(): Observable<Object> {
-        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.CARDS}`);
+    getCards(): Observable<object> {
+        return this.http.get(`${this.baseUrl}${CONFIG.API_PATHS.CARDS}`);
     }
 
-    getChests(): Observable<Object> {
-        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.CHESTS}`);
+    getChests(): Observable<object> {
+        return this.http.get(`${this.baseUrl}${CONFIG.API_PATHS.CHESTS}`);
     }
 
-    getPlayers(): Observable<Object> {
-        return this.http.get(`${this.apiUrl}${CONFIG.API_PATHS.PLAYERS}`);
+    getPlayers(): Observable<object> {
+        return this.http.get(`${this.baseUrl}${CONFIG.API_PATHS.PLAYERS}`);
     }
 }

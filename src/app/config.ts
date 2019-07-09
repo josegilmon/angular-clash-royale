@@ -1,9 +1,9 @@
-///<reference path="pages/arena/detail/arena-detail.component.ts"/>
+// /<reference path="pages/arena/detail/arena-detail.component.ts"/>
 /**
  * Created by jagil on 26/01/2017.
  */
 
- import { InjectionToken } from "@angular/core";
+import { InjectionToken } from '@angular/core';
 
 const CLASH_ROYALE_API_URL = new InjectionToken('CLASH_ROYALE_API_URL');
 

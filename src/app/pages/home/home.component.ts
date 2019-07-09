@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-    cards: Object[] = [
+    cards: object[] = [
         {
             title: 'Arenas',
             text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',

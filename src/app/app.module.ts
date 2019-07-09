@@ -62,8 +62,6 @@ const appRoutes: Routes = [
     ],
     providers: [
         RoyaleService,
-        // { provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://localhost:8085/api' },
-        { provide: CONFIG.CLASH_ROYALE_API_URL, useValue: 'http://www.clashapi.xyz/api' },
         ArenaAction,
         CardAction,
         CardSelector,

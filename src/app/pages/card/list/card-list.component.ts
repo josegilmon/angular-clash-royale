@@ -28,7 +28,7 @@ export class CardListComponent implements OnInit {
             if (this.idArena !== undefined) {
                 return state.cards.entities.filter( (card: Card) => card.arena === this.idArena );
             }
-            return state.cards.entities
+            return state.cards.entities;
         } );
     }
 
